@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+
+# Environment files
+.env
+.env*.local
+
+# Transcripts: ignore all transcript files but keep the directory tracked
+transcripts/*.txt
+transcripts/*
+!transcripts/.gitkeep
+transcripts/
