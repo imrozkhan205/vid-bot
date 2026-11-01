@@ -42,8 +42,8 @@ export async function POST(req) {
     const openai = new OpenAI({ apiKey, baseURL: "https://openrouter.ai/api/v1" });
     const responseStream = await openai.chat.completions.create(
       {
-        model: process.env.OPENROUTER_MODEL || "openrouter/free",
-        max_tokens: 1500,
+        model: process.env.OPENROUTER_MODEL || "liquid/lfm-2.5-2.6b:free",
+        max_tokens: Number(process.env.MAX_TOKENS) || 4000,
         stream: true,
         messages: [{ role: "system", content: systemPrompt }, ...messages.map((m) => ({ role: m.role, content: m.content }))],
       },
